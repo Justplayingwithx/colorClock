@@ -19,14 +19,29 @@ function draw() {
 
 
   if(sc>=10){
-
-    text(hr+":"+mn+":"+sc,-30,180)
+     if(mn<10){
+    text(hr+":0"+mn+":"+sc,-30,180)
+    document.title = hr+":0"+mn+":"+sc
+     }
+    else if(mn>10){
+     text(hr+":"+mn+":"+sc,-30,180)
     document.title = hr+":"+mn+":"+sc
+    }
+      
   }
   else if(sc<10){
-    text(hr+":"+mn+":0"+sc,-30,180)
-    document.title = hr+":"+mn+":0"+sc
+         if(mn<10){
+    text(hr+":0"+mn+":0"+sc,-30,180)
+    document.title = hr+":0"+mn+":"+sc
+     }
+    else if(mn>10){
+     text(hr+":"+mn+":0"+sc,-30,180)
+    document.title = hr+":"+mn+":"+sc
+    }
+    
   }
+  
+  
   
   hrAngle = map(hr,0,60,0,360)
   mnAngle = map(mn,0,60,0,360)
